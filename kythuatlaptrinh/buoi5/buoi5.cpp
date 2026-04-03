@@ -7,6 +7,15 @@ using namespace std;
 struct Author {
     int id;
     string name;
+	friend istream& operator>>(istream& in, Author& a) {
+		cout << "Author information: " << endl;
+		cout << "\t+ Id: ";
+		in >> a.id;
+		cout << "\t+ Name: ";
+		in.ignore();
+		getline(in, a.name);
+		return in;
+	}
 };
 
 struct Book {
@@ -20,25 +29,41 @@ struct Book {
 		os << "\t+ Author name: " << b.author.name << endl;
 		return os;
 	}
+	friend istream& operator>>(istream& in, Author& a) {
+		cout << "Book information: " << endl;
+		cout << "\t+ Id: ";
+		in >> a.id;
+		cout << "\t+ Name: ";
+		in.ignore();
+		getline(in, a.name);
+		in >> b.author;
+		return in;
 };
 
 struct Node {
     Book data;
     Node* next;
+	void Create(Book b) {
+		data = b;
+		next = nullptr;
 };
 
 struct linkedList {
     Node* head;
-	void Show() {
-		if (head == NULL) {
+	void Show(linkedList books) {
+		if (books.head == NULL) {
 			cout << "No book available" << endl;
 			return;
 		}
-		Node* item = head;
+		Node* item = books.head;
 		while (item != NULL) {
 			cout << item->data;
 			item = item->next;
 		}
+	}
+	void AddFirst(Node* p) {
+		p->next = head->next;
+		head->next = p;
 	}
 };
 
