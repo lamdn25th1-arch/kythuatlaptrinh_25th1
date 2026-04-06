@@ -9,8 +9,8 @@ struct person {
 	int id;
 	string name;
 	friend ostream& operator << (ostream& os, const person& p) {
-		os << "\t+ id: ";
-		os << "\t+ name: "
+		os << "\t+ id: " << p.id;
+		os << "\t+ name: " << p.name;
 	}
 };
 struct node {
@@ -63,7 +63,7 @@ int main()
 			getline(cin, name);
 			bool res = false;
 			if (res) {
-				cout << "found person with name" << name <<
+				cout << "found person with name" << name << endl;
 			}
 			else
 				cout << "person isn't existed" << endl;
