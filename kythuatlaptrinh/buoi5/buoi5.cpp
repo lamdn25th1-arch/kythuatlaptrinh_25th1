@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 struct Author {
@@ -93,9 +94,9 @@ struct linkedList {
 			cout << "no book available" << endl;
 			return false;
 		}
-		node* item = head;
+		Node* item = head;
 		while (item != NULL) {
-			if (item->data.id == updateId)
+			if (item->data.id == updateId) {
 				cin >> item->data;
 			return true;
 
@@ -104,6 +105,79 @@ struct linkedList {
 	}
 	return false;
 };
+
+	Book* Find(string bookName) {
+		if (head == NULL) {
+			cout << "no books available" << endl;
+			return NULL;
+		}
+		Node* item = head;
+		while (item != NULL) {
+			if (item->data.name.Find(bookName) != std::string::npos) {
+				return &(item->data);
+			}
+			item = item->next;
+		}
+		return NULL;
+	};
+
+void Export(string filename) {
+	ofstream out(filename, ios::binary);
+	if (!out.is_open()) {
+		cout << "cannot open file" << endl;
+		return;
+	}
+	Node* item = head;
+	while (item != NULL) {
+		out.write(reinterpret_cast<const char*>(&item->data.id), sizeof(item->data.id));
+
+		size_t namelenght = item->data.name.size();
+		out.write(reinterpret_cast<const char*>(&namelenght), sizeof(namelenght));
+		out.write(item->data.name.c_str(), namelenght);
+
+		out.write(reinterpret_cast<const char*>(&item->data.author.id), sizeof(item->data.author.id));
+
+		size_t authornamelenght = item->data.author.name.size();
+		out.write(reinterpret_cast<const char*>(&authornamelenght), sizeof(authornamelenght));
+		out.write(item->data.author.name.c_str(), authornamelenght);
+
+		item = item->next;
+	}
+	out.close();
+
+	
+}
+};
+
+if (!in.is_open()) {
+	cout << "cannot open file" << endl;
+	return;
+}
+while (head != NULL) {
+	Node* temp = head;
+	head = head->next;
+	delete temp;
+}
+while (in.peek() != EOF) {
+	Book b;
+	in.read(reinterpret_cast<const char*>(&b.id), sizeof(b.id));
+
+	size_t namelenght;
+	in.read(reinterpret_cast<const char*>(&namelenght), sizeof(namelenght));
+	b.name.resize(namelenght);
+	in.read(&b.name[0], namelenght);
+	in.read(reinterpret_cast<const char*>(&b.author.id), sizeof(b.author.id));
+	size_t authornamelenght;
+	in.read(item->data.name.c_str(), namelenght);
+	size_t authornamelenght = item->data.author.name.size();
+	in.read(reinterpret_cast<const char*>(&authornamelenght), sizeof(authornamelenght));
+	b.author.name.resize(authornamelenght);
+	in.read(&b.author.name[0], authornamelenght);
+	Node* newNode = new Node;
+	newNode->Create(b);
+	AddFirst(newNode);
+}
+in.close();
 
 void main()
 {
@@ -130,6 +204,11 @@ void main()
 			break;
 		}
 		case 2: {
+			Book b;
+			cin >> b;
+			Node* newNode = new Node;
+			newNode->Create(b);
+			books.AddFirst(newNode);
 			break;
 
 		}
@@ -157,9 +236,22 @@ void main()
 
 		}
 		case 5: {
+			string bookName;
+			cout << "enter a books name to find: ";
+			cin.ignore();
+			getline(cin, bookName);
+			Book* res = books.Find(bookName);
+			if (res != NULL) {
+				cout << *res;
+			}
+			else {
+				cout << "no books with name: " << bookName << endl;
+			}
 			break;
 		}
 		case 6: {
+			books.Export("25TH1.dla");
+			cout << "Exported successfully" << endl;
 			break;
 		}
 		case 0: {

@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "buoi2", "buoi2\buoi2.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "buoi5", "buoi5\buoi5.vcxproj", "{3B988F5C-5C65-43D6-BB6A-98946ECB4585}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "buoi7", "buoi7\buoi7.vcxproj", "{0FAC7326-C4CB-4670-A51B-E12FE127C110}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{3B988F5C-5C65-43D6-BB6A-98946ECB4585}.Release|x64.Build.0 = Release|x64
 		{3B988F5C-5C65-43D6-BB6A-98946ECB4585}.Release|x86.ActiveCfg = Release|Win32
 		{3B988F5C-5C65-43D6-BB6A-98946ECB4585}.Release|x86.Build.0 = Release|Win32
+		{0FAC7326-C4CB-4670-A51B-E12FE127C110}.Debug|x64.ActiveCfg = Debug|x64
+		{0FAC7326-C4CB-4670-A51B-E12FE127C110}.Debug|x64.Build.0 = Debug|x64
+		{0FAC7326-C4CB-4670-A51B-E12FE127C110}.Debug|x86.ActiveCfg = Debug|Win32
+		{0FAC7326-C4CB-4670-A51B-E12FE127C110}.Debug|x86.Build.0 = Debug|Win32
+		{0FAC7326-C4CB-4670-A51B-E12FE127C110}.Release|x64.ActiveCfg = Release|x64
+		{0FAC7326-C4CB-4670-A51B-E12FE127C110}.Release|x64.Build.0 = Release|x64
+		{0FAC7326-C4CB-4670-A51B-E12FE127C110}.Release|x86.ActiveCfg = Release|Win32
+		{0FAC7326-C4CB-4670-A51B-E12FE127C110}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
