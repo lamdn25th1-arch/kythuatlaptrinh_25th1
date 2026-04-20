@@ -7,7 +7,7 @@
 
 int main()
 {
-	linkedList books = { NULL };
+	LinkedList<Account> account = { NULL };
 	do {
 		system("cls");
 		cout << "-----------BOOK MANAGEMENT---------" << endl;
@@ -29,12 +29,18 @@ int main()
 
 		}
 		case 2: {
+			Account a;
+			cin >> a;
+			account.Add(a);
+			break;
+
+
 			
 
 		}
 		case 3: {
 			int removeId;
-			cout << "enter account id to remove: "
+			cout << "enter account id to remove: ";
 				cin >> removeId;
 			account.Remove(removeId);
 			break;
@@ -53,7 +59,7 @@ int main()
 			break;
 		}
 		case 0: {
-			return;
+			return 0;
 		}
 		default: {
 			cout << "Invalid choice, try again" << endl;
@@ -65,4 +71,4 @@ int main()
 	} while (true);
 }
 
-}
+

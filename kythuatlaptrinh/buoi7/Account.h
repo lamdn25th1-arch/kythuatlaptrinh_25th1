@@ -1,6 +1,7 @@
 #include <string>
 using namespace std;
 struct Account {
+	int id;
 	string lnk, usr, pwd, desc;
 	friend ostream& operator<<(ostream& os, Account& b) {
 		os << "Account information: " << endl;
@@ -10,11 +11,11 @@ struct Account {
 		os << "\t+ Description: " << b.desc << endl;
 		return os;
 	}
-	friend ostream& operator<<(ostream& os, Account& b) {
+	friend istream& operator>>(istream& in, Account& b) {
 		cout << "Account information: " << endl;
 		cout << "\t+ Id: ";
-		in >> b.id
-		cout << "\t+ Link: ";
+		in >> b.id;
+			cout << "\t+ Link: ";
 		in.ignore();
 		getline(in, b.lnk);
 		cout << "\t+ User name: ";
@@ -25,4 +26,5 @@ struct Account {
 		cout << "\t+ Description: ";
 		getline(in, b.desc);
 		return in;
+	}
 };
