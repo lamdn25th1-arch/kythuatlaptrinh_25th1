@@ -17,14 +17,13 @@ struct Account {
 		in >> b.id;
 			cout << "\t+ Link: ";
 		in.ignore();
-		getline(in, b.lnk);
+		in.getLine(b.lnk, 50);
 		cout << "\t+ User name: ";
-		in.ignore();
-		getline(in, b.usr);
+		in.getLine(b.usr, 50);
 		cout << "\t+ Password: ";
-		getline(in, b.pwd);
+		in.getLine(b.pwd, 50);
 		cout << "\t+ Description: ";
-		getline(in, b.desc);
+		in.getLine(b.desc, 50);
 		return in;
 	}
 };

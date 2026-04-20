@@ -16,8 +16,17 @@ struct LinkedList {
 	bool Remove(int id);
 	bool Update(int id);
 	void Find(string userName);
+	void Export(string fileName);
+	void Import(string fileName);
 
 };
+
+template<typename T>
+void LinkedList<T>::Export(string fileName) {
+	ofstream outFile(fileName, ios::binary);
+	if (!outFile) {
+		cout << "Error opening flie"
+
 
 template<typename T>
 void LinkedList<T>::Find(string userName) {
