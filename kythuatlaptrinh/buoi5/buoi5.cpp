@@ -49,8 +49,7 @@ struct Node {
 	}
 };
 
-struct linkedList {
-	Node* head;
+ 	Node* head;
 	void Show() {
 		if (head == NULL) {
 			cout << "No book available" << endl;

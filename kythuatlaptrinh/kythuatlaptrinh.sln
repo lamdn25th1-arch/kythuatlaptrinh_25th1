@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "buoi5", "buoi5\buoi5.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "buoi7", "buoi7\buoi7.vcxproj", "{0FAC7326-C4CB-4670-A51B-E12FE127C110}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kiemtra", "kiemtra\kiemtra.vcxproj", "{A3B28292-7BAC-41BE-A08E-E64844623362}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{0FAC7326-C4CB-4670-A51B-E12FE127C110}.Release|x64.Build.0 = Release|x64
 		{0FAC7326-C4CB-4670-A51B-E12FE127C110}.Release|x86.ActiveCfg = Release|Win32
 		{0FAC7326-C4CB-4670-A51B-E12FE127C110}.Release|x86.Build.0 = Release|Win32
+		{A3B28292-7BAC-41BE-A08E-E64844623362}.Debug|x64.ActiveCfg = Debug|x64
+		{A3B28292-7BAC-41BE-A08E-E64844623362}.Debug|x64.Build.0 = Debug|x64
+		{A3B28292-7BAC-41BE-A08E-E64844623362}.Debug|x86.ActiveCfg = Debug|Win32
+		{A3B28292-7BAC-41BE-A08E-E64844623362}.Debug|x86.Build.0 = Debug|Win32
+		{A3B28292-7BAC-41BE-A08E-E64844623362}.Release|x64.ActiveCfg = Release|x64
+		{A3B28292-7BAC-41BE-A08E-E64844623362}.Release|x64.Build.0 = Release|x64
+		{A3B28292-7BAC-41BE-A08E-E64844623362}.Release|x86.ActiveCfg = Release|Win32
+		{A3B28292-7BAC-41BE-A08E-E64844623362}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
