@@ -45,6 +45,18 @@ void Show() {
 	}
 }
 
+void Sort() {
+	for (int i = 0; i < nBook - 1; i++) {
+		for (int j = i + 1; i < nBook; j++) {
+			if (books[j].price > books[i].price) {
+				Book temp = books[i];
+				books[i] = books[j];
+				books[j] = temp;
+			}
+		}
+	}
+}
+
 int main()
 {
 	do {
@@ -73,6 +85,8 @@ int main()
 
 		}
 		case 3: {
+			Sort();
+			sorted = true;
 			break;
 		}
 		case 4: {
